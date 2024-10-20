@@ -23,4 +23,4 @@ Follow me...
 
 
 Special thanks:
-[Kodlama Vakti](https://www.youtube.com/watch?v=ywNUY9xd2DA&list=PLEcJSEQK_cD4HTOlqV7xxMH0CYi29adgX&index=34)
+[Kodlama Vakti](https://www.youtube.com/watch?v=ywNUY9xd2DA&list=PLEcJSEQK_cD4HTOlqV7xxMH0CYi29adgX&index=35)
