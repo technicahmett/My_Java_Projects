@@ -3,7 +3,7 @@ And I want to write some code to make projects. These sometimes from internet so
 I am a newbie. Therefore they may basic codes and basic projects.
 I want to improve my self in java.
 
-It is project called Hangman. There are not anybody don't know hangman. The Hangman is a game for kids and adults. It is basic but also fun.
+First project called Hangman. There are not anybody don't know hangman. The Hangman is a game for kids and adults. It is basic but also fun.
 
 There are three version files in this package. 
 
