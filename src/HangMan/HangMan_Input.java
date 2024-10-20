@@ -40,8 +40,7 @@ public class HangMan_Input {
 
             }
 
-            System.out.println("");
-            System.out.println("Your remaining guess: " + remainingGuess);
+            System.out.println("\nYour remaining guess: " + remainingGuess);
             System.out.print("Enter a Letter: ");
             char guess = scanner.next().toLowerCase().charAt(0);
 
