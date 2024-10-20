@@ -12,8 +12,6 @@ public class HangMan_Array {
 
         String[] words = {"java", "programing", "book", "computer", "human", "objects"};
         String wordToGuess = words[random.nextInt(words.length)];
-        //String wordToGuess = words[0];
-        //System.out.println(wordToGuess);
 
         boolean[] guessedLetters = new boolean[wordToGuess.length()];
 

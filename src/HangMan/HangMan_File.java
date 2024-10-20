@@ -26,7 +26,6 @@ public class HangMan_File {
 
         boolean[] guessedLetters = new boolean[wordToGuess.length()];
 
-        //deneme hakkı tahmin edilecek kelimenin harf sayısının 2 katı oldu
         int remainingGuess = wordToGuess.length() * 2;
 
 
