@@ -1,32 +1,24 @@
-package HangMan;
+package hangman;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class HangMan_Input {
+public class HangMan_Array {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        System.out.println("Welcome to My HangMan Game!");
-        System.out.print("How many words will you enter? : ");
-        int size = scanner.nextInt();
 
-        String[] words=new String[size];
-        for (int i = 0; i <size ; i++) {
-            System.out.print("Enter word#"+(i+1)+": ");
-            words[i]= scanner.next();
-        }
-        System.out.println();
-
-        String wordToGuess=words[random.nextInt(words.length)];
+        String[] words = {"java", "programing", "book", "computer", "human", "objects"};
+        String wordToGuess = words[random.nextInt(words.length)];
 
         boolean[] guessedLetters = new boolean[wordToGuess.length()];
 
-        int remainingGuess = words.length*2;
+        int remainingGuess = 6;
 
-        System.out.println("Enter a letter to guess the word...");
+        System.out.println("Welcome to My HangMan Game!");
+        System.out.println("Please. Enter a letter...");
 
         while (remainingGuess > 0) {
 
@@ -40,7 +32,7 @@ public class HangMan_Input {
 
             }
 
-            System.out.println("\nYour remaining guess: " + remainingGuess);
+            System.out.println("\nYour Remaining Guess: " + remainingGuess);
             System.out.print("Enter a Letter: ");
             char guess = scanner.next().toLowerCase().charAt(0);
 
@@ -61,9 +53,9 @@ public class HangMan_Input {
             }
 
             boolean isComplete = true;
-            for (boolean letter: guessedLetters){
-                if (!letter){
-                    isComplete=false;
+            for (boolean letter : guessedLetters) {
+                if (!letter) {
+                    isComplete = false;
                     break;
                 }
             }
@@ -73,12 +65,9 @@ public class HangMan_Input {
             }
 
         }
-        if (remainingGuess==0){
+        if (remainingGuess == 0) {
             System.out.println("Your right to guess is over. Game Over !!!");
             System.out.println("Correct Word --> " + wordToGuess);
         }
-
-
-
     }
 }

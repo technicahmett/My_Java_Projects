@@ -1,21 +1,33 @@
-package HangMan;
+package hangman;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HangMan_Array {
-    public static void main(String[] args) {
+public class HangMan_File {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        File file = new File(System.getProperty("user.dir") + "/src/HangMan/Names.txt");
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
+        Scanner readFile = new Scanner(file);
+        ArrayList words = new ArrayList();
 
-        String[] words = {"java", "programing", "book", "computer", "human", "objects"};
-        String wordToGuess = words[random.nextInt(words.length)];
+
+        while (readFile.hasNext()) {
+            words.add(readFile.nextLine());
+        }
+
+        String wordToGuess = (String) words.get(random.nextInt(words.size()));
 
         boolean[] guessedLetters = new boolean[wordToGuess.length()];
 
-        int remainingGuess = 6;
+        int remainingGuess = wordToGuess.length() * 2;
+
 
         System.out.println("Welcome to My HangMan Game!");
         System.out.println("Please. Enter a letter...");
@@ -29,7 +41,6 @@ public class HangMan_Array {
                 } else {
                     System.out.print("- ");
                 }
-
             }
 
             System.out.println("");

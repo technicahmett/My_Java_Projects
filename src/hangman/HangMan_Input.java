@@ -1,36 +1,32 @@
-package HangMan;
+package hangman;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HangMan_File {
-    public static void main(String[] args) throws FileNotFoundException {
-
-        File file = new File(System.getProperty("user.dir") + "/src/HangMan/Names.txt");
+public class HangMan_Input {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        Scanner readFile = new Scanner(file);
-        ArrayList words = new ArrayList();
+        System.out.println("Welcome to My HangMan Game!");
+        System.out.print("How many words will you enter? : ");
+        int size = scanner.nextInt();
 
-
-        while (readFile.hasNext()) {
-            words.add(readFile.nextLine());
+        String[] words=new String[size];
+        for (int i = 0; i <size ; i++) {
+            System.out.print("Enter word#"+(i+1)+": ");
+            words[i]= scanner.next();
         }
+        System.out.println();
 
-        String wordToGuess = (String) words.get(random.nextInt(words.size()));
+        String wordToGuess=words[random.nextInt(words.length)];
 
         boolean[] guessedLetters = new boolean[wordToGuess.length()];
 
-        int remainingGuess = wordToGuess.length() * 2;
+        int remainingGuess = words.length*2;
 
-
-        System.out.println("Welcome to My HangMan Game!");
-        System.out.println("Please. Enter a letter...");
+        System.out.println("Enter a letter to guess the word...");
 
         while (remainingGuess > 0) {
 
@@ -41,10 +37,10 @@ public class HangMan_File {
                 } else {
                     System.out.print("- ");
                 }
+
             }
 
-            System.out.println("");
-            System.out.println("Your Remaining Guess: " + remainingGuess);
+            System.out.println("\nYour remaining guess: " + remainingGuess);
             System.out.print("Enter a Letter: ");
             char guess = scanner.next().toLowerCase().charAt(0);
 
@@ -65,9 +61,9 @@ public class HangMan_File {
             }
 
             boolean isComplete = true;
-            for (boolean letter : guessedLetters) {
-                if (!letter) {
-                    isComplete = false;
+            for (boolean letter: guessedLetters){
+                if (!letter){
+                    isComplete=false;
                     break;
                 }
             }
@@ -77,9 +73,12 @@ public class HangMan_File {
             }
 
         }
-        if (remainingGuess == 0) {
+        if (remainingGuess==0){
             System.out.println("Your right to guess is over. Game Over !!!");
             System.out.println("Correct Word --> " + wordToGuess);
         }
+
+
+
     }
 }
