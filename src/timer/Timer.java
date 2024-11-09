@@ -6,7 +6,7 @@ public class Timer {
     public static void main(String[] args) {
 
 
-        int min = 0;
+        int min ;
         int sec = 59;
 
         Scanner scanner= new Scanner(System.in);
